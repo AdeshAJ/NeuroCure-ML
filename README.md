@@ -1,155 +1,106 @@
+
 # 🧠 NeuroCure-ML
 
-A machine learning project focused on detecting neurological disorders through clinical data analysis and predictive modeling.
+A machine learning-powered application designed to predict diseases based on user-input symptoms. This project uses classification models trained on real-world medical symptom-disease datasets.
 
 ---
 
-## 🚀 Project Overview
+## 🚀 Features
 
-**NeuroCure-ML** leverages various machine learning models to assist healthcare professionals in early diagnosis of neurological conditions.  
-It processes medical datasets to deliver actionable insights with improved accuracy.
+- User symptom input
+- Predictive model outputs possible diseases
+- Trained on medical datasets
+- Clean CLI-based user interaction
+- Modular Python codebase
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Category           | Tools / Libraries                                                                 |
-|--------------------|------------------------------------------------------------------------------------|
-| **Languages**      | Python 3.x                                                                         |
-| **Libraries**      | NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn, Joblib, Jupyter Notebook         |
-| **ML Algorithms**  | Logistic Regression, Random Forest, SVM, Decision Tree, KNN                        |
-| **Environment**    | Jupyter Notebook, Anaconda / Virtualenv                                            |
-| **Version Control**| Git, GitHub                                                                        |
-| **IDE**            | VS Code / Jupyter                                                                  |
-| **Deployment**     | Flask / FastAPI (Planned)                                                           |
+| Category        | Technology Used            |
+|----------------|-----------------------------|
+| Programming    | Python 3.10+                |
+| ML Libraries   | Scikit-learn, Pandas, NumPy |
+| Visualization  | Matplotlib                  |
+| Flowchart Tool | draw.io / mermaid.js        |
+| Environment    | Jupyter Notebook            |
+| Version Control| Git + GitHub                |
 
 ---
 
-## 📁 Project Structure
+## 📈 Flowchart
 
-NeuroCure-ML/
-│
-├── data/ # Raw & processed datasets
-├── notebooks/ # EDA and modeling Jupyter notebooks
-├── models/ # Saved ML models (joblib/pickle)
-├── src/ # Python scripts/modules
-├── requirements.txt # Python dependencies
-└── README.md # Project overview
+```mermaid
+flowchart TD
+    A[Start] --> B[User inputs symptoms]
+    B --> C[Preprocess inputs]
+    C --> D[Load trained ML model]
+    D --> E[Model predicts disease]
+    E --> F[Display predicted disease to user]
+    F --> G[End]
+````
 
-yaml
-Copy
-Edit
 
----
+## ⚙️ Installation
 
-## 📊 Project Pipeline (Flowchart)
-
-```plaintext
-                  ┌─────────────────────────────┐
-                  │ 1. Data Collection           │
-                  │    (CSV, Clinical Records)   │
-                  └────────────┬────────────────┘
-                               │
-                               ▼
-               ┌───────────────────────────────┐
-               │ 2. Data Preprocessing          │
-               │ - Missing values handling      │
-               │ - Encoding & normalization     │
-               └────────────┬──────────────────┘
-                            │
-                            ▼
-             ┌──────────────────────────────────┐
-             │ 3. Exploratory Data Analysis      │
-             │ - Correlation, visual plots       │
-             │ - Class imbalance check           │
-             └────────────┬─────────────────────┘
-                          │
-                          ▼
-           ┌──────────────────────────────────────┐
-           │ 4. Model Training & Selection         │
-           │ - SVM, RF, LR, DT, KNN                │
-           │ - Cross-validation, tuning            │
-           └────────────┬─────────────────────────┘
-                        │
-                        ▼
-       ┌───────────────────────────────────────────┐
-       │ 5. Model Evaluation                        │
-       │ - Confusion Matrix, ROC-AUC, Accuracy      │
-       └────────────┬──────────────────────────────┘
-                    │
-                    ▼
-    ┌────────────────────────────────────────────────────┐
-    │ 6. Model Saving & Future Deployment                │
-    │ - Saved via joblib                                 │
-    │ - REST API with Flask or FastAPI (planned)         │
-    └────────────────────────────────────────────────────┘
-✨ Features
-✅ Cleaned and preprocessed medical data
-
-📊 In-depth Exploratory Data Analysis (EDA)
-
-🤖 Machine Learning Classification models
-
-📈 Evaluation metrics & visualization
-
-💾 Model persistence with joblib or pickle
-
-🌐 Deployment-ready architecture (Flask/FastAPI)
-
-📦 Installation
-Install the required dependencies:
-
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Run in Jupyter:
-
-bash
-Copy
-Edit
-jupyter notebook
-📂 Usage Instructions
-bash
-Copy
-Edit
+```bash
 git clone https://github.com/AdeshAJ/NeuroCure-ML.git
 cd NeuroCure-ML
+pip install -r requirements.txt
+```
+
+---
+
+## 🧪 Usage
+
+```bash
+python main.py
+```
+
+Or run via Jupyter Notebook:
+
+```bash
 jupyter notebook
-Explore notebooks in the notebooks/ folder to run or modify models.
+```
 
-📈 Output Examples
-✅ Confusion Matrix
+Enter symptoms as prompted. The model will predict the most probable disease.
 
-📉 ROC Curve
+---
 
-🧬 Feature Importance Visualization
+## 📂 Project Structure
 
-📜 Classification Reports
+```
+NeuroCure-ML/
+├── main.py
+├── model/
+│   ├── train_model.py
+│   └── disease_predictor.pkl
+├── data/
+│   └── symptom_disease_dataset.csv
+├── notebooks/
+│   └── EDA_and_Modeling.ipynb
+├── requirements.txt
+└── README.md
+```
 
-🧠 Dataset Info
-Format: .csv (from public clinical sources or anonymized medical datasets)
+---
 
-Columns: Symptoms, history, test results, etc.
+## 🤝 Contributing
 
-All sensitive data anonymized or simulated for demo purposes.
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-🔮 Future Scope
-🧠 Deep Learning models (CNNs for MRI scans)
+---
 
-🌐 API endpoints for real-time prediction
+## 📜 License
 
-📲 Web interface using React or Flask templates
+This project is licensed under the MIT License.
 
-🔒 HIPAA/GDPR-compliant handling (if scaled)
+---
 
-🤝 Contributing
-Feel free to open an issue or submit a pull request if you'd like to contribute to the project!
+## 🙌 Acknowledgements
 
-📄 License
-Distributed under the MIT License. See LICENSE for more information.
+* Dataset from open-source medical datasets
+* Inspiration from real-life symptom checkers
 
-👨‍💻 Author
-Adesh AJ
-🔗 GitHub Profile
+````
 
